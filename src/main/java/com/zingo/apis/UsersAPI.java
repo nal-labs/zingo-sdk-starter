@@ -27,7 +27,7 @@ public class UsersAPI {
         CreateProxyParam param = new CreateProxyParam(request);
         param.setTmaId(tmaId);
         param.setHash(hash);
-        String resStr = ApacheHttpClientUtil.post(baseUrl+"user/telegram/createProxy", new StringEntity(gson.toJson(param), ContentType.APPLICATION_JSON));
+        String resStr = ApacheHttpClientUtil.post(baseUrl+"/zingo/user/telegram/createProxy", new StringEntity(gson.toJson(param), ContentType.APPLICATION_JSON));
         return gson.fromJson(resStr, new TypeToken<Rsp<CreateProxyResp>>(){}.getType());
     }
 }
